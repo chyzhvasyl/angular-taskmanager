@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+
+
+<div class="todo-item"  [class.completed]="todo.completed" >
+  <button class="checkbox-icon" (click)="selector()">
+<span *ngIf = " !todo.completed" class="glyphicon glyphicon-unchecked"> </span>
+    <span *ngIf = "todo.completed" class="glyphicon glyphicon-check"> </span>
+  </button>
+
+
+<span class="title" >
+{{todo.title}}
+
+</span>
+<div class="actions" style="display: inline-block">
+<button class="delete-icon" (click)="ondelete() ">
+  <span class="glyphicon glyphicon-remove"  style="align-content: right"></span>
+</button>
+
+</div>
+
+</div>
+
+

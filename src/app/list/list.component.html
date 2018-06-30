@@ -1,0 +1,7 @@
+<div class="todo-list" *ngIf="todos.length ">
+  <app-task *ngFor="let todo of todos" [todo] ="todo"  (delete) = "delete ($event)">
+
+
+
+  </app-task>
+</div>

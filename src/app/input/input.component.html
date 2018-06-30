@@ -1,0 +1,7 @@
+<form class="todo-form" (ngSubmit)="onSubmit(); todoForm.reset()" #todoForm = "ngForm" >
+  <label class="sr-only" for="inlineFormInputName2">Name</label>
+  <input type="text" name="title" [(ngModel)]="title"  class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Додати" required>
+
+
+  <button type="submit" class="btn btn-primary mb-2" [disabled]="todoForm.form.invalid" >Додати</button>
+</form>
