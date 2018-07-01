@@ -1,26 +1,27 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {variables} from "../shara/todo"
-import {todos} from "../shara/tasks"
+
+import {TodoService} from '../services/service'
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
- todos: variables[] = todos;
+  todos:variables[];
 
   delete(todo: variables)
   {
-    let id = this.todos.indexOf(todo);
-    if(id> -1)
-    {
-      this.todos.splice(id, 1)
-
-    }
+this.TodoService.deleTodo(todo);
   }
-  constructor() { }
+  constructor(private TodoService: TodoService) { this.todos =[]}
 
   ngOnInit() {
-  }
 
+    this.todos = this.TodoService.getTodos();
+  }
+  selector ( todo: variables){
+     this.TodoService.selectortodo(todo);
+
+  }
 }

@@ -11,8 +11,12 @@ import {variables} from "../shara/todo";
 export class TaskComponent implements OnInit {
 @Input() todo: variables  ;
   @Output() delete = new EventEmitter();
-  selector ( ){
-    this.todo.completed = !this.todo.completed;
+  @Output() selector = new EventEmitter()
+
+
+  onselector ( ){
+
+    this.selector.emit(this.todo);
 
   }
 ondelete()

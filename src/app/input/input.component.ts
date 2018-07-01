@@ -1,24 +1,25 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import {TodoService} from "../services/service";
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
-export class InputComponent implements OnInit {
+export class InputComponent   {
   title: string ='';
-  @Output() add = new EventEmitter();
+
 
 
   onSubmit( )
   {
 
-   this.add.emit(this.title);
+   this.TodoService.createTodo(this.title);
 
   }
 
 
-  constructor() { }
+  constructor(private TodoService: TodoService) { }
 
   ngOnInit() {
   }

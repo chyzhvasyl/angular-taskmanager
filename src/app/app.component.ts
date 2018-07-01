@@ -15,12 +15,12 @@ import {variables} from "./shara/todo";
 export class AppComponent {
   title = 'Моя остання надія';
 
-todos: variables[] = todos;
-
-  create(title: string){
-
-const todo = new variables(title);
-     this.todos.push(todo)
-  }
+//todos: variables[] = todos;
+//
+//  create(title: string){
+//
+//const todo = new variables(title);
+//     this.todos.push(todo)
+//  }
 
 }
